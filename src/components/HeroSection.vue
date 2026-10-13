@@ -30,6 +30,21 @@ const tagline = computed(() => isZh.value ? '桌面端中后台 · 移动端跨�
       <div class="hero-actions">
         <button class="btn btn-primary" @click="$emit('cta')">{{ t({ zh: '查看项目', en: 'View Projects' }) }}</button>
         <a class="btn btn-outline" href="#contact">{{ t({ zh: '联系我', en: 'Contact Me' }) }}</a>
+        <a class="btn btn-outline" href="https://lc19990308.github.io/web-blog/" target="_blank" rel="noopener">{{ t({ zh: '技术博客', en: 'Blog' }) }}</a>
+      </div>
+      <div class="hero-facts">
+        <div class="fact">
+          <span class="fact-num">6+</span>
+          <span class="fact-label">{{ t({ zh: '年经验', en: 'Years Experience' }) }}</span>
+        </div>
+        <div class="fact">
+          <span class="fact-num">15+</span>
+          <span class="fact-label">{{ t({ zh: '交付项目', en: 'Projects Delivered' }) }}</span>
+        </div>
+        <div class="fact">
+          <span class="fact-num">48</span>
+          <span class="fact-label">{{ t({ zh: '技术技能', en: 'Technical Skills' }) }}</span>
+        </div>
       </div>
     </div>
     <div class="scroll-indicator" @click="$emit('cta')">
@@ -65,8 +80,8 @@ const tagline = computed(() => isZh.value ? '桌面端中后台 · 移动端跨�
   display: inline-block;
   font-size: 0.85rem;
   color: var(--cyan);
-  border: 1px solid rgba(0, 180, 216, 0.3);
-  background: rgba(0, 180, 216, 0.08);
+  border: 1px solid rgba(217, 119, 6, 0.3);
+  background: rgba(217, 119, 6, 0.08);
   padding: 4px 16px;
   border-radius: 20px;
   margin-bottom: 24px;
@@ -117,7 +132,7 @@ const tagline = computed(() => isZh.value ? '桌面端中后台 · 移动端跨�
 .tech-pill:hover {
   border-color: var(--cyan);
   color: var(--cyan);
-  background: rgba(0, 180, 216, 0.08);
+  background: rgba(217, 119, 6, 0.08);
   transform: translateY(-2px);
 }
 .hero-actions {
@@ -126,12 +141,43 @@ const tagline = computed(() => isZh.value ? '桌面端中后台 · 移动端跨�
   justify-content: center;
   animation: fadeInUp 0.6s ease 0.4s both;
 }
+.hero-facts {
+  display: flex;
+  justify-content: center;
+  gap: 64px;
+  margin-top: 48px;
+  animation: fadeInUp 0.6s ease 0.5s both;
+}
+.fact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 96px;
+}
+.fact-num {
+  font-family: var(--font-mono);
+  font-size: 1.9rem;
+  font-weight: 500;
+  color: var(--amber);
+}
+.fact-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+@media (max-width: 480px) {
+  .hero-facts { gap: 28px; }
+  .fact { min-width: 80px; }
+}
 .btn {
   font-family: var(--font-sans);
   font-size: 1rem;
   font-weight: 600;
   padding: 12px 32px;
-  border-radius: 12px;
+  border-radius: 999px;
   cursor: pointer;
   transition: all 0.3s;
   text-decoration: none;
@@ -144,7 +190,7 @@ const tagline = computed(() => isZh.value ? '桌面端中后台 · 移动端跨�
 }
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 30px rgba(0, 180, 216, 0.4);
+  box-shadow: 0 0 30px rgba(217, 119, 6, 0.4);
 }
 .btn-outline {
   background: transparent;

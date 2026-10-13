@@ -1,15 +1,14 @@
 <script setup>
 import { interests } from '../data/interests.js'
 import { useI18n } from '../composables/useI18n.js'
-import { useTheme } from '../composables/useTheme.js'
 
 const { t } = useI18n()
-const { currentTheme } = useTheme()
 </script>
 
 <template>
   <section id="interests" class="section">
     <div class="container">
+      <p class="section-eyebrow">05 / Beyond Work</p>
       <h2 class="section-title">{{ t({ zh: '工作之外', en: 'Beyond Work' }) }}</h2>
       <p class="section-subtitle">{{ t({ zh: '不止是写代码', en: 'More than just code' }) }}</p>
       <div class="interests-grid">
@@ -17,13 +16,9 @@ const { currentTheme } = useTheme()
           v-for="item in interests"
           :key="item.label.zh"
           class="interest-card"
-          :style="{ '--gradient': currentTheme === 'dark' ? item.gradient : item.gradientLight, '--border-color': item.border }"
         >
-          <div class="interest-bg"></div>
-          <div class="interest-content">
-            <span class="interest-label">{{ t(item.label) }}</span>
-            <p class="interest-desc">{{ t(item.desc) }}</p>
-          </div>
+          <span class="interest-label">{{ t(item.label) }}</span>
+          <p class="interest-desc">{{ t(item.desc) }}</p>
         </div>
       </div>
     </div>
@@ -37,6 +32,9 @@ const { currentTheme } = useTheme()
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 8px;
+}
+.section-eyebrow {
+  text-align: center;
 }
 .section-subtitle {
   text-align: center;
@@ -52,32 +50,20 @@ const { currentTheme } = useTheme()
   margin: 0 auto;
 }
 .interest-card {
-  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
   border-radius: 14px;
-  overflow: hidden;
-  border: 1px solid var(--border);
+  padding: 24px;
+  -webkit-backdrop-filter: var(--glass-filter);
+  backdrop-filter: var(--glass-filter);
+  box-shadow: var(--glass-shadow), var(--glass-highlight);
   transition: all 0.3s;
   min-height: 100px;
 }
 .interest-card:hover {
-  border-color: var(--border-color);
   transform: translateY(-3px);
-}
-.interest-bg {
-  position: absolute;
-  inset: 0;
-  background: var(--gradient);
-}
-[data-theme="dark"] .interest-bg {
-  opacity: 0.4;
-}
-[data-theme="light"] .interest-bg {
-  opacity: 0.7;
-}
-.interest-content {
-  position: relative;
-  z-index: 1;
-  padding: 24px;
+  border-color: var(--border-hover);
+  box-shadow: var(--glass-shadow-hover), var(--glass-highlight);
 }
 .interest-label {
   display: inline-block;

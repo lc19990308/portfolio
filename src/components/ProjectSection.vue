@@ -30,6 +30,7 @@ const toggleProject = (id) => {
   <section id="projects" class="section">
     <div class="container">
       <div class="section-header">
+        <p class="section-eyebrow">01 / Projects</p>
         <h2 class="section-title">{{ t({ zh: '项目经历', en: 'Projects' }) }}</h2>
         <p class="section-desc">{{ t({ zh: '从物联网通信到 AI 大模型应用，每个项目都包含完整的技术挑战与解决方案', en: 'From IoT communication to AI model applications, each project features complete technical challenges and solutions' }) }}</p>
       </div>
@@ -144,18 +145,22 @@ const toggleProject = (id) => {
 }
 .project-card {
   background: var(--bg-card);
-  border: 1px solid var(--border);
+  border: 1px solid var(--glass-border);
   border-radius: 16px;
   padding: 24px;
   cursor: pointer;
+  -webkit-backdrop-filter: var(--glass-filter);
+  backdrop-filter: var(--glass-filter);
+  box-shadow: var(--glass-shadow), var(--glass-highlight);
   transition: all 0.3s ease;
 }
 .project-card:hover {
   background: var(--bg-card-hover);
   border-color: var(--border-hover);
+  box-shadow: var(--glass-shadow-hover), var(--glass-highlight);
 }
 .timeline-item.expanded .project-card {
-  border-color: rgba(0, 180, 216, 0.3);
+  border-color: rgba(217, 119, 6, 0.3);
 }
 .card-meta {
   display: flex;
@@ -167,7 +172,7 @@ const toggleProject = (id) => {
 .card-type {
   font-size: 0.75rem;
   color: var(--cyan);
-  background: rgba(0, 180, 216, 0.1);
+  background: rgba(217, 119, 6, 0.1);
   padding: 2px 10px;
   border-radius: 4px;
   font-weight: 500;
@@ -180,7 +185,7 @@ const toggleProject = (id) => {
 .card-badge {
   font-size: 0.75rem;
   color: var(--teal);
-  background: rgba(100, 255, 218, 0.1);
+  background: rgba(148, 163, 122, 0.1);
   padding: 2px 10px;
   border-radius: 4px;
   font-weight: 500;
@@ -206,14 +211,14 @@ const toggleProject = (id) => {
   font-size: 0.75rem;
   padding: 3px 10px;
   border-radius: 6px;
-  background: rgba(0, 180, 216, 0.08);
-  border: 1px solid rgba(0, 180, 216, 0.15);
+  background: rgba(217, 119, 6, 0.08);
+  border: 1px solid rgba(217, 119, 6, 0.15);
   color: var(--text-secondary);
   font-family: var(--font-mono);
 }
 .tag:hover {
   color: var(--cyan);
-  border-color: rgba(0, 180, 216, 0.3);
+  border-color: rgba(217, 119, 6, 0.3);
 }
 .tag-more {
   background: var(--bg-card);
@@ -246,9 +251,11 @@ const toggleProject = (id) => {
 .card-body {
   margin-top: 12px;
   background: var(--bg-card);
-  border: 1px solid var(--border);
+  border: 1px solid var(--glass-border);
   border-radius: 12px;
   padding: 24px;
+  -webkit-backdrop-filter: var(--glass-filter);
+  backdrop-filter: var(--glass-filter);
 }
 .detail-block {
   margin-top: 20px;
@@ -294,8 +301,8 @@ const toggleProject = (id) => {
   font-family: var(--font-mono);
   font-size: 0.85rem;
   color: var(--teal);
-  background: rgba(100, 255, 218, 0.05);
-  border: 1px solid rgba(100, 255, 218, 0.15);
+  background: rgba(148, 163, 122, 0.05);
+  border: 1px solid rgba(148, 163, 122, 0.15);
   padding: 12px 16px;
   border-radius: 8px;
   line-height: 1.6;
@@ -308,8 +315,8 @@ const toggleProject = (id) => {
 .result-item {
   font-size: 0.85rem;
   color: var(--teal);
-  background: rgba(100, 255, 218, 0.08);
-  border: 1px solid rgba(100, 255, 218, 0.15);
+  background: rgba(148, 163, 122, 0.08);
+  border: 1px solid rgba(148, 163, 122, 0.15);
   padding: 4px 14px;
   border-radius: 8px;
   font-weight: 500;

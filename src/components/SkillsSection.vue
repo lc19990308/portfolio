@@ -9,6 +9,7 @@ const { t } = useI18n()
   <section id="skills" class="section">
     <div class="container">
       <div class="section-header">
+        <p class="section-eyebrow">02 / Skills</p>
         <h2 class="section-title">{{ t({ zh: '技术能力', en: 'Technical Skills' }) }}</h2>
         <p class="section-desc">{{ t({ zh: '持续深耕前端工程化、跨平台开发与 AI 应用', en: 'Frontend engineering, cross-platform development & AI applications' }) }}</p>
       </div>
@@ -44,16 +45,20 @@ const { t } = useI18n()
 }
 .skill-card {
   background: var(--bg-card);
-  border: 1px solid var(--border);
+  border: 1px solid var(--glass-border);
   border-radius: 16px;
   padding: 24px;
   height: 100%;
+  -webkit-backdrop-filter: var(--glass-filter);
+  backdrop-filter: var(--glass-filter);
+  box-shadow: var(--glass-shadow), var(--glass-highlight);
   transition: all 0.3s;
   border-top: 3px solid var(--accent);
 }
 .skill-card:hover {
   background: var(--bg-card-hover);
   border-color: var(--border-hover);
+  box-shadow: var(--glass-shadow-hover), var(--glass-highlight);
 }
 .cat-name {
   font-size: 1.1rem;

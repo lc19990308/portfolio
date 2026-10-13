@@ -26,6 +26,7 @@ const copyEmail = async () => {
   <section id="contact" class="section contact-section">
     <div class="container">
       <div class="section-header">
+        <p class="section-eyebrow">04 / Contact</p>
         <h2 class="section-title">{{ t({ zh: '联系我', en: 'Contact' }) }}</h2>
         <p class="section-desc">{{ t({ zh: '如果有合适的机会，欢迎随时联系', en: 'Open to opportunities — feel free to reach out' }) }}</p>
       </div>
@@ -74,9 +75,12 @@ const copyEmail = async () => {
   max-width: 520px;
   margin: 0 auto;
   background: var(--bg-card);
-  border: 1px solid var(--border);
+  border: 1px solid var(--glass-border);
   border-radius: 16px;
   padding: 32px;
+  -webkit-backdrop-filter: var(--glass-filter);
+  backdrop-filter: var(--glass-filter);
+  box-shadow: var(--glass-shadow), var(--glass-highlight);
 }
 .contact-item {
   display: flex;
@@ -105,15 +109,23 @@ const copyEmail = async () => {
   font-size: 0.8rem;
   font-family: var(--font-sans);
   color: var(--cyan);
-  background: rgba(0, 180, 216, 0.1);
-  border: 1px solid rgba(0, 180, 216, 0.2);
+  background: rgba(217, 119, 6, 0.1);
+  border: 1px solid rgba(217, 119, 6, 0.2);
   padding: 4px 12px;
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.2s;
 }
 .copy-btn:hover {
-  background: rgba(0, 180, 216, 0.2);
+  background: rgba(217, 119, 6, 0.2);
+}
+.contact-link {
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.contact-link:hover {
+  color: var(--cyan);
+  text-decoration: underline;
 }
 .resume-download {
   text-align: center;
@@ -127,7 +139,7 @@ const copyEmail = async () => {
   font-size: 1rem;
   font-weight: 600;
   padding: 12px 32px;
-  border-radius: 12px;
+  border-radius: 999px;
   cursor: pointer;
   transition: all 0.3s;
   text-decoration: none;
@@ -138,7 +150,7 @@ const copyEmail = async () => {
 }
 .resume-download .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 30px rgba(0, 180, 216, 0.4);
+  box-shadow: 0 0 30px rgba(217, 119, 6, 0.4);
 }
 .download-hint {
   font-size: 0.85rem;
