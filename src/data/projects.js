@@ -1,5 +1,35 @@
 export const projects = [
   {
+    id: 's3000-deployment',
+    name: { zh: '国产 GPU 部署与测试', en: 'Domestic GPU Deployment & Testing' },
+    period: '2026',
+    techStack: ['国产算力', '离线部署', 'FP32', '自动化诊断'],
+    type: 'infrastructure',
+    published: false,
+    summary: {
+      zh: '负责封闭内网双卡 S3000 现场部署与环境适配，解决编译与驱动适配问题，构建 FP32 算力测试与自动化诊断工具，形成可复用的离线部署、测试与运维流程。',
+      en: 'Handled on-site deployment and environment adaptation for dual S3000 GPUs in an isolated network, resolved build and driver module issues, and developed FP32 benchmark and diagnostic tooling with reusable offline deployment and maintenance procedures.',
+    },
+    challenge: {
+      zh: '封闭环境无法直接获取在线依赖，国产 CPU、操作系统与 GPU 软件栈需要协同适配；现场排查还需要兼顾操作成本、问题复现与证据回收。',
+      en: 'An isolated network prevented online dependency installation, while the CPU, operating system and GPU stack required coordinated adaptation. On-site troubleshooting also required reproducible diagnostics and portable evidence collection.',
+    },
+    approach: {
+      zh: '围绕鲲鹏 920、麒麟 V10 与双卡 S3000 准备离线部署环境，修复编译链接和 DKMS 内核模块问题。编写基于 muBLAS SGEMM 的 FP32 测试程序，配套单／双卡执行、结果校验与日志采集脚本，并以分层探针和环境取证工具支撑现场排查及厂商协作。',
+      en: 'Prepared an offline environment for Kunpeng 920, Kylin V10 and dual S3000 GPUs; fixed compilation, linking and DKMS module issues. Built a muBLAS SGEMM FP32 benchmark with single/dual-GPU execution, validation and logging scripts, plus layered probes and evidence collection tools for on-site troubleshooting and vendor collaboration.',
+    },
+    keyPoints: {
+      zh: ['封闭内网现场部署与国产软硬件环境适配', '编译链接修复、离线依赖准备与驱动内核模块适配', '单／双卡 FP32 测试工具、分层诊断与日志归档'],
+      en: ['On-site offline deployment and platform adaptation', 'Build/link fixes, offline dependencies and driver module adaptation', 'Single/dual-GPU FP32 tooling, layered diagnostics and log archiving'],
+    },
+    results: {
+      zh: ['完成双卡部署环境与编译、内核模块修复', '沉淀 FP32 测试代码、自动化诊断工具与离线操作手册', '形成可复用的问题复现、证据采集与厂商协作流程'],
+      en: ['Prepared the dual-GPU environment and resolved build and kernel module issues', 'Delivered FP32 benchmark code, diagnostic tools and offline operation guides', 'Established reusable reproduction, evidence collection and vendor collaboration procedures'],
+    },
+    architecture: '离线环境准备 → 双卡 S3000 部署 → 编译与驱动适配 → FP32 测试工具 / 分层诊断 → 日志与运维文档',
+    gradient: 'linear-gradient(135deg, #0c1a24, #16303f, #0f2231)',
+  },
+  {
     id: 'finance-intel',
     name: { zh: '金融情报分析中台', en: 'Finance Intelligence Platform' },
     period: '2026',
@@ -53,14 +83,14 @@ export const projects = [
   },
   {
     id: 'mooring-check',
-    name: { zh: '系泊定位系统验收检查平台', en: 'Mooring System Acceptance Platform' },
+    name: { zh: '系泊分析自动化测试平台', en: 'Mooring Analysis Automation Platform' },
     period: '2026',
-    techStack: ['Vue 3', 'TypeScript', 'Vite', 'Naive UI', 'Pinia', 'Playwright', 'pdfjs-dist', 'OpenAPI'],
+    techStack: ['Vue 3', 'TypeScript', 'Vite', 'Naive UI', 'Pinia', 'Playwright', 'pdfjs-dist', 'OpenAPI', 'RPA'],
     type: 'web',
     published: false,
     summary: {
-      zh: '中集来福士海上平台系泊定位系统的验收测试平台前端，负责 FCR（功能覆盖率）与 ICR（指标符合率）双指标核算，覆盖用例导入、任务执行、PDF 证据预览、报告导出整个验收流程。',
-      en: 'Acceptance testing platform frontend for CIMC Raffles\' offshore mooring positioning system, handling FCR (Function Coverage Rate) and ICR (Indicator Compliance Rate) metrics across case import, task execution, PDF evidence preview, and report export.',
+      zh: '参与中集系泊分析测试平台建设，承担用例管理、任务执行与结果展示等前端开发，接入 MAS.exe 自动执行流程，编写 RPA 脚本衔接桌面软件操作，推动测试过程从人工操作转向自动执行与结果追溯。',
+      en: 'Contributed to CIMC’s mooring analysis testing platform, developing case management, task execution and result views, integrating MAS.exe automation and writing RPA scripts to connect desktop operations with automated execution and traceable results.',
     },
     challenge: {
       zh: '系泊定位系统的验收要求严格：功能点关联用例、用例关联 PDF 证据、结果可追溯需求，FCR/ICR 按项目实时核算。307 条用例由 Windows Runner 网关在远程机器上驱动执行，验收人员要在前端实时看到执行进度。上千条用例的批量导入必须先校验再入库，出错即整批回滚，避免产生脏数据。',
@@ -72,6 +102,7 @@ export const projects = [
     },
     keyPoints: {
       zh: [
+        '接入 MAS.exe 自动执行流程，编写 RPA 脚本衔接桌面软件操作',
         'OpenAPI 生成全部 TS API 客户端，类型精确到字段、零 any',
         'PDF 证据浏览器内预览，pdfjs-dist 懒加载 + Web Worker 解析',
         'usePagedList 把 13 个视图的分页样板收敛为一个实现，seq 守卫防旧响应覆盖',
@@ -80,6 +111,7 @@ export const projects = [
         'Playwright e2e 18 spec / 46 用例 + 12 个静态检查脚本',
       ],
       en: [
+        'Integrated MAS.exe execution and wrote RPA scripts for desktop operations',
         'All TS API clients generated from OpenAPI, field-precise types, zero any',
         'In-browser PDF evidence preview with pdfjs-dist lazy loading + Web Worker parsing',
         'usePagedList consolidates pagination boilerplate from 13 views into one, seq guard against stale overwrites',
@@ -90,11 +122,13 @@ export const projects = [
     },
     results: {
       zh: [
+        '衔接 Web 任务操作与 MAS 桌面自动化，减少重复人工操作',
         '路由覆盖验收全流程：用例导入、执行监控、证据追溯、报告导出',
         '307 条用例执行状态实时可视，无需登录远程机器',
         '6 周交付可上线状态',
       ],
       en: [
+        'Connected Web task operations with MAS desktop automation to reduce repetitive manual work',
         'Routes covering the full acceptance workflow: case import, execution monitoring, evidence traceability, report export',
         'Real-time visibility into all 307 cases, no remote machine access needed',
         'Delivered in 6 weeks',
@@ -752,6 +786,7 @@ export const projects = [
 ]
 
 export const projectTypes = {
+  infrastructure: { zh: '现场部署与运维', en: 'Deployment & Operations' },
   mobile: { zh: '移动端 App', en: 'Mobile App' },
   web: { zh: '桌面端 Web', en: 'Desktop Web' },
   hybrid: { zh: 'PC + 移动端', en: 'PC + Mobile' },
