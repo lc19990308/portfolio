@@ -16,18 +16,28 @@ export const skillCategories = [
   },
   {
     name: { zh: 'AI', en: 'AI' },
-    skills: ['Claude Code', 'Codex / OpenAI', 'Skill 编写', 'MCP 对接', '插件开发', 'Agent 编排'],
+    skills: ['Claude Code', 'Codex', 'Skill Orchestration', 'MCP', 'DeepSeek Harness', 'DSH Bot', 'AI + TTS', 'Text Chunking'],
     color: '#f59e0b',
   },
   {
     name: { zh: 'Web3 & 支付', en: 'Web3 & Payments' },
-    skills: ['WalletConnect', 'web3.js', 'USDT/ETH', '微信支付', '支付宝支付', 'uni-pay'],
+    skills: ['WalletConnect', 'web3.js', 'ETH / USDC / USDT', '微信支付', '支付宝支付', 'uni-pay'],
     color: '#f97316',
   },
   {
     name: { zh: '工程化', en: 'Engineering' },
     skills: ['pnpm monorepo', 'Vue Query', 'UnoCSS', 'Tailwind CSS', 'Jest', 'ESLint', 'Figma'],
     color: '#ef4444',
+  },
+  {
+    name: { zh: '自动化与设备集成', en: 'Automation & Device Integration' },
+    skills: ['AutoX.js', 'Android Accessibility', 'OCR', 'UI Tree', 'GUI RPA', 'Native Plugins'],
+    color: '#6b7a4f',
+  },
+  {
+    name: { zh: '全栈与部署实践', en: 'Full-stack & Deployment Practice' },
+    skills: ['FastAPI', 'SQLAlchemy', 'Supabase', 'Linux', 'Offline Deployment'],
+    color: '#8b5a86',
   },
   {
     name: { zh: 'App & 上架', en: 'App & Publishing' },

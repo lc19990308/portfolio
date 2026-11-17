@@ -5,6 +5,22 @@ import { useI18n } from '../composables/useI18n.js'
 
 const { t } = useI18n()
 const expandedId = ref(null)
+const featuredIds = ['yingshi', 'xingyuan', 'mooring-check', 'short-video']
+const projectGroups = [
+  {
+    id: 'professional',
+    name: { zh: '商业项目与交付', en: 'Professional Projects' },
+    items: [
+      ...featuredIds.map(id => projects.find(project => project.id === id)).filter(Boolean),
+      ...projects.filter(project => project.group !== 'personal' && !featuredIds.includes(project.id)),
+    ],
+  },
+  {
+    id: 'personal',
+    name: { zh: '个人作品与 AI 实践', en: 'Personal Works & AI Practice' },
+    items: projects.filter(project => project.group === 'personal'),
+  },
+]
 
 const labels = {
   challenge: { zh: '核心挑战', en: 'Challenge' },
@@ -32,14 +48,16 @@ const toggleProject = (id) => {
       <div class="section-header">
         <p class="section-eyebrow">01 / Projects</p>
         <h2 class="section-title">{{ t({ zh: '项目经历', en: 'Projects' }) }}</h2>
-        <p class="section-desc">{{ t({ zh: '从物联网通信到 AI 大模型应用，每个项目都包含完整的技术挑战与解决方案', en: 'From IoT communication to AI model applications, each project features complete technical challenges and solutions' }) }}</p>
+        <p class="section-desc">{{ t({ zh: '展示业务项目中的个人职责与交付成果，以及独立作品和 AI 应用实践', en: 'Personal contributions and delivery outcomes in professional projects, followed by independent works and AI practice' }) }}</p>
       </div>
 
-      <div class="timeline">
+      <div v-for="group in projectGroups" :key="group.id" class="project-group">
+        <h3 class="group-title">{{ t(group.name) }}</h3>
+        <div class="timeline">
         <div class="timeline-line"></div>
 
         <article
-          v-for="(project, idx) in projects"
+          v-for="(project, idx) in group.items"
           :key="project.id"
           :class="['timeline-item', { expanded: expandedId === project.id }]"
           v-observe
@@ -51,10 +69,11 @@ const toggleProject = (id) => {
             <div class="card-header">
               <div class="card-meta">
                 <span class="card-type">{{ t(projectTypes[project.type]) }}</span>
-                <span class="card-period">{{ project.period }}</span>
+                <span v-if="project.period" class="card-period">{{ project.period }}</span>
                 <span v-if="project.published" class="card-badge">{{ t(project.badge) }}</span>
               </div>
-              <h3 class="card-title">{{ t(project.name) }}</h3>
+              <h4 class="card-title">{{ t(project.name) }}</h4>
+              <a v-if="project.url" class="project-link" :href="project.url" target="_blank" rel="noopener noreferrer">{{ t({ zh: '查看作品 ↗', en: 'View Work ↗' }) }}</a>
               <p class="card-summary">{{ t(project.summary) }}</p>
               <div class="card-tags">
                 <span v-for="tech in project.techStack.slice(0, 6)" :key="tech" class="tag">{{ tech }}</span>
@@ -64,54 +83,71 @@ const toggleProject = (id) => {
 
             <div class="card-body" :style="{ display: expandedId === project.id ? 'block' : 'none' }">
                 <div class="detail-block">
-                  <h4 class="detail-title">{{ t(labels.challenge) }}</h4>
+                  <h5 class="detail-title">{{ t(labels.challenge) }}</h5>
                   <p class="detail-text">{{ t(project.challenge) }}</p>
                 </div>
 
                 <div class="detail-block">
-                  <h4 class="detail-title">{{ t(labels.approach) }}</h4>
+                  <h5 class="detail-title">{{ t(labels.approach) }}</h5>
                   <p class="detail-text">{{ t(project.approach) }}</p>
                 </div>
 
                 <div class="detail-block">
-                  <h4 class="detail-title">{{ t(labels.keyPoints) }}</h4>
+                  <h5 class="detail-title">{{ t(labels.keyPoints) }}</h5>
                   <ul class="detail-list">
                     <li v-for="point in t(project.keyPoints)" :key="point">{{ point }}</li>
                   </ul>
                 </div>
 
                 <div v-if="project.architecture" class="detail-block">
-                  <h4 class="detail-title">{{ t(labels.architecture) }}</h4>
-                  <div class="arch-flow">{{ project.architecture }}</div>
+                  <h5 class="detail-title">{{ t(labels.architecture) }}</h5>
+                  <div class="arch-flow">{{ t(project.architecture) }}</div>
                 </div>
 
                 <div class="detail-block">
-                  <h4 class="detail-title">{{ t(labels.results) }}</h4>
+                  <h5 class="detail-title">{{ t(labels.results) }}</h5>
                   <div class="results-grid">
                     <span v-for="result in t(project.results)" :key="result" class="result-item">{{ result }}</span>
                   </div>
                 </div>
 
                 <div v-if="project.published && project.platforms" class="detail-block">
-                  <h4 class="detail-title">{{ t(labels.platforms) }}</h4>
+                  <h5 class="detail-title">{{ t(labels.platforms) }}</h5>
                   <div class="platform-list">
                     <span v-for="p in project.platforms" :key="p" class="platform-item">{{ p }}</span>
                   </div>
                 </div>
             </div>
 
-            <div class="card-expand-hint" @click.prevent.stop="toggleProject(project.id)">
+            <button type="button" class="card-expand-hint" :aria-expanded="expandedId === project.id" @click.prevent.stop="toggleProject(project.id)">
               <span>{{ expandedId === project.id ? t(labels.collapse) : t(labels.expand) }}</span>
               <span :class="['arrow', { up: expandedId === project.id }]">▼</span>
-            </div>
+            </button>
           </div>
         </article>
+        </div>
       </div>
     </div>
   </section>
 </template>
 
 <style scoped>
+.project-group + .project-group {
+  margin-top: 56px;
+}
+.group-title {
+  max-width: 800px;
+  margin: 0 auto 24px;
+  padding-left: 48px;
+  font-size: 1.15rem;
+  color: var(--text-primary);
+}
+.project-link {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: var(--cyan);
+  font-size: 0.85rem;
+}
 .timeline {
   position: relative;
   max-width: 800px;
@@ -226,12 +262,17 @@ const toggleProject = (id) => {
   color: var(--text-muted);
 }
 .card-expand-hint {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  font: inherit;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
   margin-top: 16px;
-  padding-top: 14px;
+  min-height: 44px;
+  padding: 14px 0 0;
   border-top: 1px solid var(--border);
   font-size: 0.8rem;
   color: var(--text-muted);
@@ -337,6 +378,7 @@ const toggleProject = (id) => {
 
 @media (max-width: 640px) {
   .timeline-item { padding-left: 40px; }
+  .group-title { padding-left: 40px; }
   .project-card { padding: 18px; }
   .card-title { font-size: 1.1rem; }
 }

@@ -1,18 +1,20 @@
 <script setup>
 import { computed } from 'vue'
+import { skillCategories } from '../data/skills.js'
 import { useI18n } from '../composables/useI18n.js'
 
 const emit = defineEmits(['cta'])
 const { t, isZh } = useI18n()
 
-const tagline = computed(() => isZh.value ? '桌面端中后台 · 移动端跨平台 · IoT 物联网 · AI 应用落地' : 'Desktop · Mobile · IoT · AI Applications')
+const skillCount = skillCategories.reduce((total, category) => total + category.skills.length, 0)
+const tagline = computed(() => isZh.value ? '业务前端与组件工程 · 跨端集成与自动化 · AI 应用实践' : 'Frontend · Automation · AI Practice')
 </script>
 
 <template>
   <section id="hero" class="hero-section">
     <div class="hero-bg"></div>
     <div class="hero-content container">
-      <div class="hero-badge">{{ t({ zh: '6 年经验 · 前端开发工程师', en: '6 Years · Frontend Engineer' }) }}</div>
+      <div class="hero-badge">{{ t({ zh: '7 年经验 · 前端开发工程师', en: '7 Years · Frontend Engineer' }) }}</div>
       <h1 class="hero-name">
         LewChaw
       </h1>
@@ -26,6 +28,8 @@ const tagline = computed(() => isZh.value ? '桌面端中后台 · 移动端跨�
         <span class="tech-pill">WebRTC · BLE · NFC</span>
         <span class="tech-pill">Three.js · Web3</span>
         <span class="tech-pill">iOS · Android</span>
+        <span class="tech-pill">AutoX.js · RPA</span>
+        <span class="tech-pill">Skill · MCP · DSH Bot</span>
       </div>
       <div class="hero-actions">
         <button class="btn btn-primary" @click="$emit('cta')">{{ t({ zh: '查看项目', en: 'View Projects' }) }}</button>
@@ -34,7 +38,7 @@ const tagline = computed(() => isZh.value ? '桌面端中后台 · 移动端跨�
       </div>
       <div class="hero-facts">
         <div class="fact">
-          <span class="fact-num">6+</span>
+          <span class="fact-num">7</span>
           <span class="fact-label">{{ t({ zh: '年经验', en: 'Years Experience' }) }}</span>
         </div>
         <div class="fact">
@@ -42,7 +46,7 @@ const tagline = computed(() => isZh.value ? '桌面端中后台 · 移动端跨�
           <span class="fact-label">{{ t({ zh: '交付项目', en: 'Projects Delivered' }) }}</span>
         </div>
         <div class="fact">
-          <span class="fact-num">48</span>
+          <span class="fact-num">{{ skillCount }}</span>
           <span class="fact-label">{{ t({ zh: '技术技能', en: 'Technical Skills' }) }}</span>
         </div>
       </div>
@@ -74,6 +78,8 @@ const tagline = computed(() => isZh.value ? '桌面端中后台 · 移动端跨�
 .hero-content {
   position: relative;
   z-index: 1;
+  width: 100%;
+  min-width: 0;
   text-align: center;
 }
 .hero-badge {
@@ -169,6 +175,9 @@ const tagline = computed(() => isZh.value ? '桌面端中后台 · 移动端跨�
   color: var(--text-muted);
 }
 @media (max-width: 480px) {
+  .hero-content { padding-right: 8px; padding-left: 8px; }
+  .hero-name, .hero-tagline, .hero-sign { overflow-wrap: anywhere; }
+  .hero-actions { flex-wrap: wrap; }
   .hero-facts { gap: 28px; }
   .fact { min-width: 80px; }
 }
