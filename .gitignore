@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# 本地开发辅助目录
+.claude/
+.codegraph/
+.playwright-mcp/
+
