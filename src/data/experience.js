@@ -5,15 +5,15 @@ export const experience = [
     period: '2024.02 - 至今',
     highlights: {
       zh: [
-        '承担金融投研、CRM 与工业测试系统的 Web／App 前端开发，完成设计稿落地、公共组件封装、接口联调与功能交付',
+        '目前在职，参与 YS 投研金融数据平台、系泊分析自动化测试平台、天涯同行app、国产 GPU 部署与测试、船舶软件供应链攻防演练系统及 MBSE 数据接口测试平台',
         '在 YS 投研中封装图表、菜单栏、Banner 等定制组件，优化大数据量 K 线、首屏加载与模块耦合',
-        '开发 CRM 的 AutoX.js 自动录入与拨号流程，通过原生插件衔接通话监听、录音回传和遗漏补偿',
+        '参与天涯同行app前端开发与 Web3 多钱包支付接入，并负责国产 GPU 现场部署、环境适配与测试工具建设',
         '编写 MAS.exe GUI 自动化脚本，通过 API 与 Windows Python 桥衔接，实现 180+ 条测试用例的自动化操作',
       ],
       en: [
-        'Developed Web and App frontends for investment research, CRM, and industrial testing, from design implementation and reusable components to API integration and delivery',
+        'Currently employed, contributing to YS Investment Research Platform, Mooring Analysis Automated Testing Platform, Tianya Tongxing App, domestic GPU deployment and testing, Ship Software Supply Chain Attack and Defense Exercise System, and MBSE Data Interface Testing Platform',
         'Built custom chart, menu, and Banner components for YS Research; optimized large K-line datasets, initial loading, and module coupling',
-        'Built AutoX.js data-entry and dialing automation for CRM, integrating native plugins for call monitoring, recording uploads, and recovery of missed recordings',
+        'Contributed to Tianya Tongxing App frontend development and Web3 multi-wallet payments; handled on-site domestic GPU deployment, environment adaptation, and testing tools',
         'Wrote MAS.exe GUI automation scripts, connected through APIs to an existing Windows Python bridge, automating operations for 180+ test cases',
       ],
     },
