@@ -1,7 +1,7 @@
 export const skillCategories = [
   {
     name: { zh: '核心栈', en: 'Core Stack' },
-    skills: ['Vue 2/3', 'TypeScript', 'uni-app', 'Element Plus/UI', 'Pinia/Vuex', 'Vite', 'Vue Router', 'Composition API'],
+    skills: ['Vue 2/3', 'TypeScript', 'JavaScript (ES6+)', 'uni-app', 'Flutter (Dart)', 'Qt', 'Pinia/Vuex', 'Vite', 'Composition API'],
     color: '#b45309',
   },
   {
@@ -11,12 +11,12 @@ export const skillCategories = [
   },
   {
     name: { zh: '通信 & 硬件', en: 'Comm & Hardware' },
-    skills: ['WebSocket', 'SSE', 'MQTT', 'WebRTC', 'BLE', 'NFC', 'SIP.js', 'RTSP'],
+    skills: ['WebSocket', 'SSE', 'MQTT', 'JsSIP / WebRTC', 'RESTful API', 'BLE', 'NFC', 'RTSP'],
     color: '#6b7a4f',
   },
   {
     name: { zh: 'AI', en: 'AI' },
-    skills: ['Claude Code', 'Codex', 'Skill Orchestration', 'MCP', 'DeepSeek Harness', 'DSH Bot', 'AI + TTS', 'Text Chunking'],
+    skills: ['Claude Code', 'Codex', 'MCP Tooling', 'Skill Orchestration', 'Prompt Engineering', 'JSON Schema', 'DSH Bot', 'AI + TTS'],
     color: '#f59e0b',
   },
   {
@@ -25,8 +25,8 @@ export const skillCategories = [
     color: '#f97316',
   },
   {
-    name: { zh: '工程化', en: 'Engineering' },
-    skills: ['pnpm monorepo', 'Vue Query', 'UnoCSS', 'Tailwind CSS', 'Jest', 'ESLint', 'Figma'],
+    name: { zh: '质量保障 & CI/CD', en: 'Testing & CI/CD' },
+    skills: ['Vitest', 'Jest', 'Vue Test Utils', 'Playwright', 'Cypress', 'GitLab CI', 'GitHub Actions', 'ESLint / Prettier'],
     color: '#ef4444',
   },
   {
@@ -41,7 +41,7 @@ export const skillCategories = [
   },
   {
     name: { zh: 'App & 上架', en: 'App & Publishing' },
-    skills: ['iOS App Store', '安卓应用市场', '微信小程序', 'H5', 'Android 无障碍服务', '原生插件集成', 'HBuilderX'],
+    skills: ['微信小程序', '支付宝小程序', '微信公众号 JSSDK', 'H5', 'iOS App Store', '安卓应用市场', 'WebView / JSBridge'],
     color: '#92610e',
   },
 ]

@@ -82,19 +82,19 @@
       .resume {
         --space-3: 8px;
         --space-4: 12px;
-        --space-5: 16px;
+        --space-5: 12px;
         --column-gap: 6mm;
-        --leading: 1.42;
+        --leading: 1.3;
         width: auto;
         min-height: auto;
         margin: 0;
-        padding: 10mm 14mm;
+        padding: 8mm 12mm;
         box-shadow: none;
       }
       .columns { display: flex; gap: var(--column-gap); }
       .main-column { flex: 3 1 0; min-width: 0; }
       .sidebar { flex: 2 1 0; min-width: 0; }
-      .resume { font-size: 8.6pt; }
+      .resume { font-size: 7.6pt; }
       .resume-header { margin-bottom: var(--space-4); }
       .education { break-inside: avoid; }
       a { text-decoration: none; }
@@ -129,10 +129,10 @@
           <h1>刘超</h1>
           <div class="position">
             <strong>前端开发工程师</strong>
-            <span>AI 应用与研发工具实践</span>
+            <span>资深跨端开发与 AI 工程化</span>
           </div>
         </div>
-        <p class="profile-meta">7 年开发经验 · 28 岁 · 大专 · 在职，考虑机会 · 期望薪资 12–15K</p>
+        <p class="profile-meta">7 年开发经验 · 大专 · 在职 · 期望职位：资深前端开发工程师 / 前端架构师</p>
         <nav class="contact" aria-label="作品与个人链接">
           <a href="https://lc19990308.github.io/portfolio/">个人简介</a>
           <a href="https://lc19990308.github.io/web-blog/">我的博客</a>
@@ -145,93 +145,99 @@
           <section aria-labelledby="experience-title">
             <h2 id="experience-title">工作经历</h2>
             <div class="entry">
-              <div class="entry-heading"><h3>北京元启汇能科技有限公司</h3><time>2025.01—至今</time></div>
-              <p class="entry-role">前端开发工程师</p>
-              <p>承担金融投研、CRM 与工业测试系统的 Web / App 开发，完成公共组件、接口联调、代码解耦及加载性能优化；其中 YS 投研平台参与约 150 个页面、185+ API 建设。</p>
+              <div class="entry-heading"><h3>北京元启汇能科技有限公司</h3><time>2024.10—至今</time></div>
+              <p class="entry-role">前端开发工程师 / 核心研发</p>
+              <p>负责金融投研、企业 CRM 及工业级测试协同平台的核心前端架构、测试体系搭建与跨端系统交付；推进工程化规范升级，落地自动化测试流水线、提示词规范、MCP 工具接入与公共业务基建。</p>
             </div>
             <div class="entry">
-              <div class="entry-heading"><h3>河南力天大数据有限公司</h3><time>2022.03—2024.12</time></div>
+              <div class="entry-heading"><h3>河南力天大数据有限公司</h3><time>2023.02—2024.08</time></div>
               <p class="entry-role">前端开发工程师</p>
-              <p>长期服务电网客户：参与国家电网「网上国网」河南 H5、电力需求响应（DR）与可调节负荷管理平台、智慧守卫等项目建设；实现移动签约与响应全流程（削峰、填谷、移峰填谷）。</p>
+              <p>主导业务系统前端公共组件库设计与规范文档建设，推进前端工程化、组件测试与标准化开发流程；深度参与物联网及大数据可视化大屏、智慧能源调度管理平台的性能调优与接口联调。</p>
             </div>
             <div class="entry">
-              <div class="entry-heading"><h3>河南九嘉信息技术有限公司</h3><time>2020.10—2022.02</time></div>
+              <div class="entry-heading"><h3>河南九嘉信息技术有限公司</h3><time>2020.09—2023.02</time></div>
               <p class="entry-role">前端开发工程师</p>
-              <p>独立负责智慧农业、智慧农机、健康服务三大项目的全部前端模块（客户含威海西洋参产业国企）；开发 BLE 智慧农机 App 支持远程指令下发，完成艾灸设备 BLE 对接与微信小程序蓝牙交互。</p>
+              <p>负责 Web 与移动端项目的核心交付，打通低功耗蓝牙（BLE）硬件通信协议，实现跨端设备控制、状态监听与数据可视化。</p>
             </div>
             <div class="entry">
-              <div class="entry-heading"><h3>河南乐易</h3><time>2019.10—2020.09</time></div>
+              <div class="entry-heading"><h3>河南乐易信息技术有限公司</h3><time>2019.10—2020.09</time></div>
               <p class="entry-role">前端开发工程师</p>
-              <p>完成 Web 与移动端业务、公共组件及接口联调，通过原生 Bridge 对接 Android / iOS 能力。</p>
+              <p>负责企业 Web 门户与后台管理系统的基础页面开发、组件复用与前后端数据联调。</p>
             </div>
           </section>
           <section aria-labelledby="projects-title">
             <h2 id="projects-title">重点项目</h2>
             <div class="entry">
-              <div class="entry-heading"><h3>YS 投研金融数据平台</h3><time>元启 · 2025—2026</time></div>
-              <p class="stack">Vue 3 / TypeScript / Pinia / ECharts 6 / SSE</p>
+              <div class="entry-heading"><h3>YS 金融智能投研平台（Web 端）</h3><time>2025.10—至今</time></div>
+              <p class="stack">Vue 3 / JavaScript / Vite / Pinia / ECharts / SSE / Vitest / Playwright / CI/CD</p>
               <ul>
-                <li>参与约 <strong>150 个页面、17 个业务领域、185+ API</strong> 的金融平台建设，完成业务交互与定制公共组件。</li>
-                <li>优化大数据量 K 线图渲染与交互（10 万级数据点下缩放/滚动流畅），结合模块分包将首屏加载从约 4s 降至约 1s。</li>
+                <li>前端一期独立开发：架构设计、工程化规范与 GitLab CI 流水线，整合 Lint、自动构建与自动化测试，核心逻辑单测覆盖率 85%+。</li>
+                <li>基于 fetch + ReadableStream 封装 SSE 分帧解析、增量渲染与双重会话快照恢复；Playwright 覆盖核心研究链路并纳入 CI 阻塞门禁。</li>
+                <li>引入数据窗口抽稀与按需切片加载，改善海量 K 线首次加载与拖拽体验，交互稳定维持 55~60 FPS。</li>
               </ul>
             </div>
             <div class="entry">
-              <div class="entry-heading"><h3>星源 CRM 移动端</h3><time>元启 · 2025—2026</time></div>
-              <p class="stack">uni-app / Vue 3 / AutoX.js / Android 无障碍 / OCR</p>
+              <div class="entry-heading"><h3>星源企业级电销 CRM（Web + App 跨端）</h3><time>2025.05—2026.06</time></div>
+              <p class="stack">Vue 3 / uni-app / JsSIP / MQTT / ECharts / Jest / Cypress / CI/CD</p>
               <ul>
-                <li>负责客户管理与外呼前端，结合节点树、OCR 实现自动录入与拨号，适配小米、OPPO、vivo、华为。</li>
-                <li>通过唯一标识关联外呼与录音，支持遗漏录音补偿回传；已上架华为、小米、应用宝等市场。</li>
+                <li>统一双端核心业务模型，实现个人/团队/公司/公海线索批量流转、动态权重分配与跟进转客。</li>
+                <li>Web 端深度封装 JsSIP 软电话，打通呼叫任务 ID 与话单，支持状态监听、静音/保持与录音回放；App 端 MQTT 信令长连接 + Android 原生双卡选卡外呼。</li>
+                <li>构建录音异步上传 + 话单事务跟踪 + 离线静默重试机制，保障弱网下话单与录音 0 丢失；Cypress E2E 与 Jest 单测拦截 90%+ 历史状态逻辑缺陷。</li>
               </ul>
             </div>
             <div class="entry">
-              <div class="entry-heading"><h3>系泊分析自动化测试平台</h3><time>元启 · 2026</time></div>
-              <p class="stack">Vue 3 / TypeScript / Naive UI / OpenAPI / RPA</p>
+              <div class="entry-heading"><h3>MBSE 工业数据接口自动化测试平台</h3><time>2026.03—2026.08</time></div>
+              <p class="stack">Vue 3 / TypeScript / Vite / Element Plus / JSON Schema / Prompt Engineering / Vitest</p>
               <ul>
-                <li>开发用例管理、任务执行、进度监控与结果展示，通过 Windows Python 桥衔接 MAS.exe。</li>
-                <li>针对 Python 桥未覆盖操作的 200 余条用例，通过 RPA 实现其中 <strong>180+ 条</strong>的 GUI 自动化操作。</li>
+                <li>参与平台整体前端开发：接口定义、Schema 校验、用例生成、pytest 脚本执行与 AI 辅助流程。</li>
+                <li>基于 JSON Schema 强约束与 Few-Shot 结构化提示词，构建「模型生成 → 差异高亮 → 人工审核/微调 → 入库」HITL 闭环。</li>
+                <li>对 Schema 转换引擎与 JSON 校验解析器编写高覆盖率 Vitest 单测，保障异构数据解析与容错渲染稳定。</li>
               </ul>
             </div>
             <div class="entry">
-              <div class="entry-heading"><h3>短剧短视频 App</h3><time>面向海外市场</time></div>
-              <p class="stack">uni-app / Vue / WalletConnect / web3.js</p>
-              <p>接入多钱包及 ETH、USDC、USDT 支付，完成钱包唤起、链上交易校验和结果展示；App 已上架 App Store。</p>
+              <div class="entry-heading"><h3>船舶系泊动力学自动化仿真测试平台</h3><time>2026.09—2026.11</time></div>
+              <p class="stack">Vue 3 / TypeScript / Naive UI / ECharts / Python PyAutoGUI / CI/CD</p>
+              <ul>
+                <li>负责项目基线对比、用例矩阵、测试批次规划与多维动力学受力曲线的前端呈现与交互封装。</li>
+                <li>打通 Web 测试平台与 Windows MAS 桌面执行节点的状态通信与日志回传链路。</li>
+                <li>针对缺乏 API 的复杂用例编写 GUI 自动化脚本，覆盖 200 余条中的 180+ 条，并串联接入定时自动化回归任务。</li>
+              </ul>
             </div>
           </section>
         </div>
         <aside class="sidebar" aria-label="技能、作品与教育">
           <section aria-labelledby="summary-title">
             <h2 id="summary-title">个人优势</h2>
-            <p>以 Vue、TypeScript 与 uni-app 为主线，具备金融数据平台、跨端应用与设备集成交付经验；可衔接 Web、Android 原生和桌面自动化流程，并持续实践 AI 应用与研发工具。</p>
+            <p>7 年前端与跨端研发经验，深耕 Vue 生态与 uni-app，具备全域跨端适配、质量保障与自动化工程化、复杂通信攻坚、AI 工程化闭环与图表性能调优能力。</p>
           </section>
           <section aria-labelledby="skills-title">
             <h2 id="skills-title">专业技能</h2>
-            <div class="skill"><h3>前端与工程化</h3><p>JavaScript、TypeScript、HTML5、CSS3；Vue 2 / 3、Composition API、Pinia、Vite、Git。</p></div>
-            <div class="skill"><h3>组件与可视化</h3><p>Element UI / Plus、Naive UI、ECharts、Three.js、地图集成。</p></div>
-            <div class="skill"><h3>跨端与自动化</h3><p>uni-app、Android 无障碍、AutoX.js、OCR、BLE、RPA；WalletConnect、web3.js。</p></div>
-            <div class="skill"><h3>AI 与服务端实践</h3><p>Skill 编排、MCP 接入、知识库切片与检索；FastAPI、SQLAlchemy、Linux 离线部署。</p></div>
+            <div class="skill"><h3>跨端与移动端</h3><p>微信小程序、支付宝小程序、微信公众号 JSSDK、Flutter（Dart）、uni-app、WebView / JSBridge、响应式适配。</p></div>
+            <div class="skill"><h3>核心栈与可视化</h3><p>Vue 3 / 2、TypeScript、ES6+、Pinia / Vuex、Vite；ECharts、Canvas/DOM 分层渲染、虚拟列表。</p></div>
+            <div class="skill"><h3>质量保障与 CI/CD</h3><p>Vitest、Jest、Vue Test Utils、Playwright、Cypress、GitLab CI、GitHub Actions、ESLint / Prettier。</p></div>
+            <div class="skill"><h3>通信与硬件</h3><p>SSE、WebSocket、RESTful API、JsSIP（WebRTC/SIP）、MQTT、BLE 设备接入。</p></div>
+            <div class="skill"><h3>AI 工程化</h3><p>MCP 工具开发、Skill 流程编排、Prompt Engineering（JSON Schema 结构化输出）、Claude Code、Codex、Agent 辅助开发。</p></div>
           </section>
           <section aria-labelledby="works-title">
-            <h2 id="works-title">个人作品与 AI 实践</h2>
+            <h2 id="works-title">个人 AI 创新与作品</h2>
             <div class="entry">
-              <h3>金融情报分析中台</h3>
-              <p>独立完成大屏、FastAPI 后端与移动端；聚合 <strong>9 类行情</strong>，以 <strong>44 个 REST 接口</strong>支撑 <strong>30 个可配置组件</strong>，支持降级、熔断与缓存。</p>
+              <h3>DSH App AI 深度阅读插件</h3>
+              <p>基于移动端 WebView 与原生桥接，结合大模型流式传输与 TTS 朗读标注，实现角色关系梳理、章节脉络图谱、逐句精读与交互式追问。</p>
+            </div>
+            <div class="entry">
+              <h3>DSH Bot 多智能体视频工作台</h3>
+              <p>独立设计搭建的多 Bot 协同平台，支持多智能体分工、跨模型调用与视音频素材处理流编排。</p>
             </div>
             <div class="entry">
               <h3>Atlas RSS 知识库</h3>
-              <p>实现采集、清洗、跨源去重、DeepSeek 摘要分类、文本切片与检索 API。</p>
+              <p>串联 RSS 采集、正文清洗、跨源去重、摘要分类、文本切片与检索 API。</p>
               <a class="work-link" href="https://github.com/lc19990308/rss-store">github.com/lc19990308/rss-store ↗</a>
-            </div>
-            <div class="entry">
-              <h3>AI 工具与交互探索</h3>
-              <p>开发 AI / TTS 阅读插件，搭建多 Bot 视频工作台；以 Three.js 与 Blender MCP 构建交互式 3D 小镇。</p>
-              <a class="work-link" href="https://lc19990308.github.io/xiaozhen/">在线体验 3D 小镇 ↗</a>
             </div>
           </section>
           <section class="education" aria-labelledby="education-title">
             <h2 id="education-title">教育经历</h2>
             <h3>郑州航空工业管理学院</h3>
             <p>工商企业管理 · 大专 · 2016—2019</p>
-            <p>自学转行前端，累计 7 年一线交付经验。</p>
           </section>
         </aside>
       </div>
